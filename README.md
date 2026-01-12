@@ -1,52 +1,57 @@
 # Automated Data Report Generator
 
-A Streamlit application that converts CSV files into professional data reports with statistics, visualizations, and actionable insights.
+A Streamlit-based Python tool that converts raw CSV files into business-ready data reports with automated insights and visualizations.
 
 ---
 
 ## Problem
 
-Data teams spend significant time on repetitive exploratory analysis when onboarding new datasets. Manual inspection of data quality, distributions, and correlations delays decision-making and introduces inconsistency.
+When onboarding new datasets, data teams and engineers often spend hours writing repetitive exploratory analysis code to assess data quality, understand distributions, and identify key relationships. This slows down decision-making and leads to inconsistent reporting.
 
 ---
 
 ## Solution
 
-This tool automates the initial data assessment process. Users upload a CSV file and receive a structured report covering data quality, statistical summaries, visual distributions, and plain-English observations within seconds.
+This application automates the initial data assessment process. By uploading a CSV file, users instantly receive a structured, readable data report covering data quality checks, statistical summaries, visual insights, and plain-English observations suitable for business and technical stakeholders.
 
 ---
 
 ## Features
 
-- Single-file CSV upload with instant dataset preview
-- Automated data quality analysis (missing values, duplicates, constant columns)
-- Statistical summaries for numerical and categorical columns
-- Auto-generated visualizations (histograms, bar charts, correlation heatmap)
-- Plain-English business insights based on data patterns
-- One-click HTML report export
+- CSV upload with instant dataset preview and schema overview
+- Automated data quality checks (missing values, duplicates, constant columns)
+- Statistical summaries for numerical and categorical features
+- Visual insights including distributions and correlation analysis
+- Auto-generated plain-English observations highlighting potential data issues and patterns
+- One-click export of a business-ready HTML report
 
 ---
 
 ## How to Run
 
-```
+```bash
+git clone https://github.com/siddharth-narigra/automated-data-report-generator
+cd automated-data-report-generator
 pip install -r requirements.txt
 streamlit run app.py
 ```
 
-Open http://localhost:8501 in a browser.
+Open http://localhost:8501 in your browser.
 
 ---
 
 ## Example Output
 
 The generated report includes:
+
 - Dataset shape and column type breakdown
 - Missing value percentages by column
-- Mean, median, standard deviation for numerical fields
-- Top category frequencies for categorical fields
+- Summary statistics (mean, median, standard deviation) for numerical features
+- Frequency analysis for categorical features
 - Correlation matrix with flagged strong relationships
-- Observations such as "Column X has 27% missing values" or "Strong correlation detected between A and B"
+- Observations such as:
+  - "Column Age contains 27% missing values and may require imputation."
+  - "A strong correlation is detected between Feature A and Feature B."
 
 ---
 
@@ -63,4 +68,4 @@ The generated report includes:
 
 ## Highlight
 
-Built an internal data reporting tool that automates CSV analysis and generates business-ready HTML reports with insights and visualizations, reducing manual EDA time by approximately 80%.
+Built a Python-based internal data reporting tool that automates CSV analysis and generates business-ready HTML reports with insights and visualizations, reducing manual exploratory analysis time by approximately 80%.
