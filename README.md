@@ -1,73 +1,66 @@
-# 📊 Automated Data Report Generator
+# Automated Data Report Generator
 
-**Instantly transform raw CSV files into business-ready data reports with insights and visualizations.**
+A Streamlit application that converts CSV files into professional data reports with statistics, visualizations, and actionable insights.
 
 ---
 
-## 🎯 Problem Statement
+## Problem
 
-Data analysts spend hours on repetitive exploratory data analysis (EDA) tasks when onboarding new datasets. This tool automates the process, generating comprehensive reports in seconds.
+Data teams spend significant time on repetitive exploratory analysis when onboarding new datasets. Manual inspection of data quality, distributions, and correlations delays decision-making and introduces inconsistency.
 
-## ✨ What It Does
+---
 
-- **Upload any CSV** → Get instant dataset overview
-- **One-click analysis** → Statistical summaries, data quality checks, visualizations
-- **Auto-generated insights** → Plain-English business observations
-- **Export-ready reports** → Download professional HTML reports
+## Solution
 
-## 🚀 Quick Start
+This tool automates the initial data assessment process. Users upload a CSV file and receive a structured report covering data quality, statistical summaries, visual distributions, and plain-English observations within seconds.
 
-```bash
-# 1. Install dependencies
+---
+
+## Features
+
+- Single-file CSV upload with instant dataset preview
+- Automated data quality analysis (missing values, duplicates, constant columns)
+- Statistical summaries for numerical and categorical columns
+- Auto-generated visualizations (histograms, bar charts, correlation heatmap)
+- Plain-English business insights based on data patterns
+- One-click HTML report export
+
+---
+
+## How to Run
+
+```
 pip install -r requirements.txt
-
-# 2. Run the app
 streamlit run app.py
-
-# 3. Open http://localhost:8501 in your browser
 ```
 
-## 📸 Demo
-
-Upload a CSV file and click "Generate Data Report" to see:
-
-| Feature | Description |
-|---------|-------------|
-| 📋 Dataset Overview | Rows, columns, data types, memory usage |
-| 🔍 Data Quality | Missing values, duplicates, constant columns |
-| 📊 Statistics | Mean, median, std for numerical; top values for categorical |
-| 📈 Visualizations | Histograms, bar charts, correlation heatmap |
-| 💡 Business Insights | Automated observations in plain English |
-
-## 🛠️ Tech Stack
-
-- **Python** - Core language
-- **Pandas / NumPy** - Data manipulation
-- **Matplotlib / Seaborn** - Visualizations
-- **Streamlit** - Web interface
-- **Jinja2** - HTML templating
-
-## 📁 Project Structure
-
-```
-automated-data-report-generator/
-├── app.py                 # Main Streamlit application
-├── report/
-│   ├── analysis.py        # Data analysis functions
-│   ├── visuals.py         # Chart generation
-│   └── insights.py        # Business insight generation
-├── templates/
-│   └── report.html        # HTML report template
-├── sample_data/
-│   └── example.csv        # Demo dataset
-├── outputs/               # Generated reports
-└── requirements.txt       # Dependencies
-```
-
-## 📝 Resume Bullet Point
-
-> Built a Streamlit-based automated data reporting tool that converts raw CSV files into business-ready HTML reports with insights and visualizations, reducing manual EDA time by ~80%.
+Open http://localhost:8501 in a browser.
 
 ---
 
-**Built for clarity, usefulness, and real business value.**
+## Example Output
+
+The generated report includes:
+- Dataset shape and column type breakdown
+- Missing value percentages by column
+- Mean, median, standard deviation for numerical fields
+- Top category frequencies for categorical fields
+- Correlation matrix with flagged strong relationships
+- Observations such as "Column X has 27% missing values" or "Strong correlation detected between A and B"
+
+---
+
+## Tech Stack
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib / Seaborn
+- Streamlit
+- Jinja2
+
+---
+
+## Highlight
+
+Built an internal data reporting tool that automates CSV analysis and generates business-ready HTML reports with insights and visualizations, reducing manual EDA time by approximately 80%.
