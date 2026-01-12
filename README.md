@@ -1,5 +1,10 @@
 # Automated Data Report Generator
 
+![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)
+![Streamlit](https://img.shields.io/badge/Streamlit-1.30%2B-FF4B4B.svg)
+![Pandas](https://img.shields.io/badge/Pandas-2.0%2B-150458.svg)
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
+
 A Streamlit-based Python tool that converts raw CSV files into business-ready data reports with automated insights and visualizations.
 
 **[Live Demo](https://automated-data-report-generator-ffzfvurwehseniu9uk5xsp.streamlit.app/)**
@@ -71,3 +76,9 @@ The generated report includes:
 ## Highlight
 
 Built a Python-based internal data reporting tool that automates CSV analysis and generates business-ready HTML reports with insights and visualizations, reducing manual exploratory analysis time by approximately 80%.
+
+---
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
