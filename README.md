@@ -2,6 +2,8 @@
 
 A Streamlit-based Python tool that converts raw CSV files into business-ready data reports with automated insights and visualizations.
 
+**[Live Demo](https://automated-data-report-generator-ffzfvurwehseniu9uk5xsp.streamlit.app/)**
+
 ---
 
 ## Problem
