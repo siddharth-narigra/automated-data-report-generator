@@ -1,0 +1,61 @@
+order_id,customer_name,product_category,region,order_date,quantity,unit_price,total_revenue,discount_pct,shipping_cost,payment_method,order_status
+1001,John Smith,Electronics,North,2024-01-05,2,299.99,599.98,0,12.50,Credit Card,Delivered
+1002,Emma Johnson,Clothing,South,2024-01-05,3,49.99,149.97,10,8.00,PayPal,Delivered
+1003,Michael Brown,Electronics,East,2024-01-06,1,899.99,899.99,5,0.00,Credit Card,Delivered
+1004,Sarah Davis,Home & Garden,West,2024-01-06,4,29.99,119.96,0,15.00,Debit Card,Delivered
+1005,James Wilson,Electronics,North,2024-01-07,1,1299.99,1299.99,15,0.00,Credit Card,Delivered
+1006,Emily Taylor,Clothing,South,2024-01-07,2,79.99,159.98,0,8.00,PayPal,Shipped
+1007,David Anderson,Books,East,2024-01-08,5,19.99,99.95,0,5.00,Credit Card,Delivered
+1008,Lisa Martinez,Electronics,West,2024-01-08,1,449.99,449.99,10,12.50,Credit Card,Delivered
+1009,Robert Garcia,Home & Garden,North,2024-01-09,3,89.99,269.97,0,18.00,Debit Card,Delivered
+1010,Jennifer Lee,Clothing,South,2024-01-09,4,34.99,139.96,5,8.00,PayPal,Processing
+1011,William Harris,Sports,East,2024-01-10,2,149.99,299.98,0,10.00,Credit Card,Delivered
+1012,Amanda Clark,Electronics,West,2024-01-10,1,599.99,599.99,0,0.00,Credit Card,Delivered
+1013,Christopher Lewis,Books,North,2024-01-11,3,24.99,74.97,0,5.00,PayPal,Delivered
+1014,Jessica Walker,Clothing,South,2024-01-11,2,99.99,199.98,15,8.00,Credit Card,Delivered
+1015,Daniel Hall,Home & Garden,East,2024-01-12,1,199.99,199.99,0,20.00,Debit Card,Shipped
+1016,Ashley Allen,Sports,West,2024-01-12,3,59.99,179.97,5,10.00,PayPal,Delivered
+1017,Matthew Young,Electronics,North,2024-01-13,2,199.99,399.98,0,12.50,Credit Card,Delivered
+1018,Stephanie King,Clothing,South,2024-01-13,5,29.99,149.95,10,8.00,PayPal,Delivered
+1019,Andrew Wright,Books,East,2024-01-14,2,34.99,69.98,0,5.00,Credit Card,Delivered
+1020,Nicole Scott,Home & Garden,West,2024-01-14,2,149.99,299.98,0,18.00,Debit Card,Delivered
+1021,Joshua Green,Electronics,North,2024-01-15,1,799.99,799.99,10,0.00,Credit Card,Delivered
+1022,Michelle Adams,Clothing,South,2024-01-15,3,44.99,134.97,0,8.00,PayPal,Processing
+1023,Kevin Baker,Sports,East,2024-01-16,2,89.99,179.98,5,10.00,Credit Card,Delivered
+1024,Laura Nelson,Books,West,2024-01-16,4,15.99,63.96,0,5.00,PayPal,Delivered
+1025,Ryan Carter,Electronics,North,2024-01-17,1,349.99,349.99,0,12.50,Credit Card,Shipped
+1026,Kimberly Mitchell,Home & Garden,South,2024-01-17,2,79.99,159.98,10,15.00,Debit Card,Delivered
+1027,Brandon Perez,Clothing,East,2024-01-18,3,54.99,164.97,0,8.00,Credit Card,Delivered
+1028,Rachel Roberts,Sports,West,2024-01-18,1,199.99,199.99,5,10.00,PayPal,Delivered
+1029,Justin Turner,Electronics,North,2024-01-19,2,149.99,299.98,0,12.50,Credit Card,Delivered
+1030,Megan Phillips,Books,South,2024-01-19,6,12.99,77.94,15,5.00,PayPal,Delivered
+1031,Tyler Campbell,Home & Garden,East,2024-01-20,1,299.99,299.99,0,20.00,Debit Card,Delivered
+1032,Samantha Parker,Clothing,West,2024-01-20,4,39.99,159.96,0,8.00,Credit Card,Delivered
+1033,Austin Evans,Electronics,North,2024-01-21,1,499.99,499.99,10,0.00,Credit Card,Processing
+1034,Brittany Edwards,Sports,South,2024-01-21,2,74.99,149.98,0,10.00,PayPal,Delivered
+1035,Jacob Collins,Books,East,2024-01-22,3,22.99,68.97,5,5.00,Credit Card,Delivered
+1036,Kayla Stewart,Electronics,West,2024-01-22,1,249.99,249.99,0,12.50,Credit Card,Delivered
+1037,Nathan Sanchez,Clothing,North,2024-01-23,2,64.99,129.98,0,8.00,PayPal,Delivered
+1038,Amber Morris,Home & Garden,South,2024-01-23,3,59.99,179.97,10,15.00,Debit Card,Shipped
+1039,Aaron Rogers,Sports,East,2024-01-24,1,129.99,129.99,0,10.00,Credit Card,Delivered
+1040,Danielle Reed,Books,West,2024-01-24,2,29.99,59.98,0,5.00,PayPal,Delivered
+1041,Sean Cook,Electronics,North,2024-01-25,1,649.99,649.99,15,0.00,Credit Card,Delivered
+1042,Christina Morgan,Clothing,South,2024-01-25,5,24.99,124.95,0,8.00,PayPal,Delivered
+1043,Patrick Bell,Home & Garden,East,2024-01-26,2,109.99,219.98,5,18.00,Debit Card,Delivered
+1044,Heather Murphy,Sports,West,2024-01-26,3,44.99,134.97,0,10.00,Credit Card,Delivered
+1045,Derek Bailey,Electronics,North,2024-01-27,1,399.99,399.99,0,12.50,Credit Card,Delivered
+1046,Courtney Rivera,Books,South,2024-01-27,4,18.99,75.96,10,5.00,PayPal,Processing
+1047,Cody Cooper,Clothing,East,2024-01-28,2,84.99,169.98,0,8.00,Credit Card,Delivered
+1048,Erin Richardson,Home & Garden,West,2024-01-28,1,179.99,179.99,0,20.00,Debit Card,Delivered
+1049,Adam Cox,Sports,North,2024-01-29,2,99.99,199.98,5,10.00,PayPal,Delivered
+1050,Rebecca Howard,Electronics,South,2024-01-29,1,299.99,299.99,0,12.50,Credit Card,Shipped
+1051,,Clothing,East,2024-01-30,3,49.99,149.97,0,8.00,PayPal,Delivered
+1052,Timothy Ward,Books,West,2024-01-30,2,,39.98,0,5.00,Credit Card,Delivered
+1053,Lindsey Torres,Electronics,North,2024-01-31,1,549.99,549.99,,0.00,Credit Card,Delivered
+1054,Eric Peterson,Home & Garden,South,2024-01-31,4,34.99,139.96,10,,Debit Card,Delivered
+1055,Angela Gray,Sports,,2024-02-01,2,119.99,239.98,0,10.00,PayPal,Delivered
+1056,Brian Ramirez,Clothing,West,2024-02-01,3,59.99,179.97,5,8.00,Credit Card,Delivered
+1057,Tiffany James,Electronics,North,,1,199.99,199.99,0,12.50,Credit Card,Processing
+1058,Kyle Watson,Books,South,2024-02-02,5,14.99,74.95,0,5.00,PayPal,Delivered
+1059,Lauren Brooks,Home & Garden,East,2024-02-03,2,99.99,,0,18.00,Debit Card,Delivered
+1060,Scott Kelly,Sports,West,2024-02-03,1,79.99,79.99,10,10.00,Credit Card,Delivered

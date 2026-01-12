@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analysis Report</title>
+    <style>
+        :root {
+            --primary: #4F46E5;
+            --primary-light: #6366F1;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --danger: #EF4444;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-600: #4B5563;
+            --gray-800: #1F2937;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-800);
+            background: var(--gray-50);
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            padding: 2.5rem 3rem;
+        }
+        
+        .header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header .subtitle {
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+        
+        .content {
+            padding: 2rem 3rem;
+        }
+        
+        .section {
+            margin-bottom: 2.5rem;
+        }
+        
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--gray-800);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary);
+            display: inline-block;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .metric-card {
+            background: var(--gray-50);
+            border-radius: 12px;
+            padding: 1.25rem;
+            text-align: center;
+            border: 1px solid var(--gray-200);
+        }
+        
+        .metric-value {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .metric-label {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            margin-top: 0.25rem;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        th, td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        th {
+            background: var(--gray-100);
+            font-weight: 600;
+            color: var(--gray-800);
+        }
+        
+        tr:hover {
+            background: var(--gray-50);
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        .badge-warning {
+            background: #FEF3C7;
+            color: #92400E;
+        }
+        
+        .badge-danger {
+            background: #FEE2E2;
+            color: #991B1B;
+        }
+        
+        .badge-success {
+            background: #D1FAE5;
+            color: #065F46;
+        }
+        
+        .insights-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+        
+        .insights-list li {
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+            background: var(--gray-50);
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .insights-list li.warning {
+            border-left-color: var(--warning);
+        }
+        
+        .insights-list li.success {
+            border-left-color: var(--success);
+        }
+        
+        .chart-container {
+            margin-top: 1rem;
+        }
+        
+        .chart-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .chart-card {
+            background: var(--gray-50);
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .chart-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        
+        .chart-title {
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--gray-800);
+        }
+        
+        .heatmap-container {
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .heatmap-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--gray-100);
+            color: var(--gray-600);
+            font-size: 0.875rem;
+        }
+        
+        @media print {
+            body { padding: 0; background: white; }
+            .container { box-shadow: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Data Analysis Report</h1>
+            <p class="subtitle">Generated on {{ generated_at }}</p>
+        </div>
+        
+        <div class="content">
+            <!-- Dataset Overview -->
+            <div class="section">
+                <h2 class="section-title">Dataset Overview</h2>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">{{ overview.rows | number_format }}</div>
+                        <div class="metric-label">Rows</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">{{ overview.columns }}</div>
+                        <div class="metric-label">Columns</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">{{ overview.numerical_count }}</div>
+                        <div class="metric-label">Numerical</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">{{ overview.categorical_count }}</div>
+                        <div class="metric-label">Categorical</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">{{ overview.memory_usage_mb }} MB</div>
+                        <div class="metric-label">Memory Usage</div>
+                    </div>
+                </div>
+                
+                <h3 style="margin-top: 1.5rem; font-size: 1.1rem;">Column Information</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Column Name</th>
+                            <th>Data Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for col, dtype in overview.dtypes.items() %}
+                        <tr>
+                            <td>{{ col }}</td>
+                            <td><code>{{ dtype }}</code></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Data Quality -->
+            <div class="section">
+                <h2 class="section-title">Data Quality Analysis</h2>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">{{ quality.duplicate_rows | number_format }}</div>
+                        <div class="metric-label">Duplicate Rows ({{ quality.duplicate_percentage }}%)</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">{{ quality.missing_values | length }}</div>
+                        <div class="metric-label">Columns with Missing</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">{{ quality.constant_columns | length }}</div>
+                        <div class="metric-label">Constant Columns</div>
+                    </div>
+                </div>
+                
+                {% if quality.missing_values %}
+                <h3 style="margin-top: 1.5rem; font-size: 1.1rem;">Missing Values by Column</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Column</th>
+                            <th>Missing Count</th>
+                            <th>Missing %</th>
+                            <th>Severity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for col, data in quality.missing_values.items() %}
+                        <tr>
+                            <td>{{ col }}</td>
+                            <td>{{ data.count | number_format }}</td>
+                            <td>{{ data.percentage }}%</td>
+                            <td>
+                                {% if data.percentage > 20 %}
+                                <span class="badge badge-danger">High</span>
+                                {% elif data.percentage > 5 %}
+                                <span class="badge badge-warning">Medium</span>
+                                {% else %}
+                                <span class="badge badge-success">Low</span>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% endif %}
+            </div>
+            
+            <!-- Statistical Summary -->
+            <div class="section">
+                <h2 class="section-title">Statistical Summary</h2>
+                
+                {% if stats.numerical %}
+                <h3 style="margin-top: 1rem; font-size: 1.1rem;">Numerical Columns</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Column</th>
+                            <th>Mean</th>
+                            <th>Median</th>
+                            <th>Std Dev</th>
+                            <th>Min</th>
+                            <th>Max</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for col, data in stats.numerical.items() %}
+                        <tr>
+                            <td>{{ col }}</td>
+                            <td>{{ data.mean }}</td>
+                            <td>{{ data.median }}</td>
+                            <td>{{ data.std }}</td>
+                            <td>{{ data.min }}</td>
+                            <td>{{ data.max }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% endif %}
+                
+                {% if stats.categorical %}
+                <h3 style="margin-top: 1.5rem; font-size: 1.1rem;">Categorical Columns</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Column</th>
+                            <th>Unique Values</th>
+                            <th>Top Value</th>
+                            <th>Top Value %</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for col, data in stats.categorical.items() %}
+                        <tr>
+                            <td>{{ col }}</td>
+                            <td>{{ data.unique_count }}</td>
+                            <td>{{ data.top_values[0].value if data.top_values else 'N/A' }}</td>
+                            <td>{{ data.top_values[0].percentage if data.top_values else 'N/A' }}%</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% endif %}
+            </div>
+            
+            <!-- Visual Insights -->
+            <div class="section">
+                <h2 class="section-title">Visual Insights</h2>
+                
+                {% if visuals.histograms %}
+                <h3 style="margin-top: 1rem; font-size: 1.1rem;">Numerical Distributions</h3>
+                <div class="chart-container">
+                    <div class="chart-grid">
+                        {% for hist in visuals.histograms %}
+                        <div class="chart-card">
+                            <div class="chart-title">{{ hist.column }}</div>
+                            <img src="data:image/png;base64,{{ hist.image }}" alt="{{ hist.column }} histogram">
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+                
+                {% if visuals.bar_charts %}
+                <h3 style="margin-top: 1.5rem; font-size: 1.1rem;">Categorical Distributions</h3>
+                <div class="chart-container">
+                    <div class="chart-grid">
+                        {% for chart in visuals.bar_charts %}
+                        <div class="chart-card">
+                            <div class="chart-title">{{ chart.column }}</div>
+                            <img src="data:image/png;base64,{{ chart.image }}" alt="{{ chart.column }} bar chart">
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+                
+                {% if visuals.correlation_heatmap %}
+                <h3 style="margin-top: 1.5rem; font-size: 1.1rem;">Correlation Heatmap</h3>
+                <div class="heatmap-container">
+                    <img src="data:image/png;base64,{{ visuals.correlation_heatmap }}" alt="Correlation heatmap">
+                </div>
+                {% endif %}
+            </div>
+            
+            <!-- Business Insights -->
+            <div class="section">
+                <h2 class="section-title">Business Insights</h2>
+                <ul class="insights-list">
+                    {% for insight in insights %}
+                    <li class="{% if '⚠' in insight %}warning{% elif '✓' in insight %}success{% endif %}">
+                        {{ insight }}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Generated by Automated Data Report Generator</p>
+        </div>
+    </div>
+</body>
+</html>
